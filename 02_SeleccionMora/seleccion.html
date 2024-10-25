@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+    		<title>Ordenamiento por seleccion</title>
+			<link rel="stylesheet" href="css/styles.css">	
+	</head>
+	
+  	<body>	
+		<div class="login">
+				<h1 class="login_heading">Ordenamiento por SELECCION</h1>
+				<span class="login_circuit-mask"></span>
+
+				<div class="cantidad">
+					<label class="form-label">Candidad</label>
+					<input class="form-control" type="text" placeholder="Ingrese No. de Elementos" name="txtCantidad">
+				</div><br>
+
+                <div id="output"></div><br>
+                <div id="output2"></div>
+
+				<div class="botones"> <br>
+					<button type="button" class="btn btn-ligth" onclick="ingresar()">Pedir Elementos</button>
+					<button type="button" class="btn btn-ligth" onclick="procesarArray()" >Mostrar Array</button>
+                    <button type="button" onclick="ordenarSeleccion()">Ordenar Array</button>
+                    <br><br><button type="reset" onclick="borrarArray()">Borrar</button><br>
+				</div>
+		</div>
+
+	<!-- //Enlazar el archivo js con html -->
+	<script src="js/seleccion.js"></script>
+  	</body>
+</html>

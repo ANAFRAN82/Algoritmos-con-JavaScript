@@ -1,0 +1,75 @@
+const ingresar = (arr) => { 
+    let n = parseInt(document.getElementsByName('txtCantidad')[0].value)
+
+    if (isNaN(n) || n <= 0) {
+        alert('Ingrese cantidad de elementos válida');
+        return;
+    }
+
+    // Limpiar el array antes de llenarlo nuevamente
+    arr = [];
+
+    for (let c = 0; c < n; c++) {
+        let elemento = parseInt(prompt('Ingrese el elemento'));  
+        arr.push(elemento);
+    } 
+}
+
+const procesarArray = (arr) => {
+    console.log('Array recibido:', arr);
+    alert('Array recibido:\n' + arr.join(', '));
+    var outputDiv = document.getElementById('output');
+    outputDiv.innerHTML = 'Array recibido: ' + arr.join(', ');
+}
+
+const ordenarSeleccion = (arr) => {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+        
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        
+        if (minIndex !== i) {
+            // Intercambiar los valores en las posiciones i y minIndex
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+    var outputDiv = document.getElementById('output2');
+    outputDiv.innerHTML = 'Array recibido: ' + arr.join(', ');
+    alert('Array ordenado por selección: ' + arr);
+}
+
+const borrarArray = () => {
+    var inputCantidad = document.getElementsByName('txtCantidad')[0];
+    inputCantidad.value = '';
+
+    var outputDiv = document.getElementById('output');
+    outputDiv.innerHTML = ('Array borrado');
+    var outputDiv2 = document.getElementById('output2');
+    outputDiv2.innerHTML = ('Array borrado');
+    alert('Array y cantidad borrados');
+}
+
+document.getElementById('ingresarBtn').addEventListener('click', () => {
+    const miArray = [];
+    ingresar(miArray);
+});
+
+document.getElementById('procesarBtn').addEventListener('click', () => {
+    const miArray = [];
+    procesarArray(miArray);
+});
+
+document.getElementById('ordenarBtn').addEventListener('click', () => {
+    const miArray = [];
+    ordenarSeleccion(miArray);
+});
+
+document.getElementById('borrarBtn').addEventListener('click', () => {
+    borrarArray();
+});

@@ -1,0 +1,66 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: linear-gradient(0deg, #1b1e26 6%,
+    #303440 95%);
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login_heading,
+.botones{
+    text-align: center;
+}
+
+.login{
+    position: relative;
+    width: 360px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 10px ;
+    background: #15171d;
+}
+
+.login:before,
+.login_circuit-mask{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    width: 682px;
+    height: 514px;
+}
+
+.login:before{
+    background: url(../images/img.svg);
+}
+
+.login_circuit-mask{
+    display: grid;
+    place-items: center;
+    mask: url(../images/img.svg);
+}   
+
+.login_circuit-mask::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #00f0ff;
+    animation: onda 3s infinite;
+}
+
+@keyframes onda {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(8);
+    }
+    
+}
